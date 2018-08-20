@@ -1,0 +1,10 @@
+create database test;
+use test;
+create table usuario(id int auto_increment, nombre varchar(50), apellido varchar(50), primary key(id));
+insert into usuario(nombre,apellido) values ('bruno','diaz');
+insert into usuario(nombre,apellido) values ('pepe','problemas');
+insert into usuario(nombre,apellido) values ('ricardito','perez');
+insert into usuario(nombre,apellido) values ('pedro','picapiedra');
+insert into usuario(nombre,apellido) values ('daniel','lluvias');
+insert into usuario(nombre,apellido) values ('jesus','magadan');
+select * from usuario;
