@@ -1,6 +1,8 @@
 package distribuidos;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.net.Socket;
 
@@ -16,6 +18,18 @@ public class Cliente {
 			socket = new Socket("localhost",PUERTO);
 			PrintStream salida = new PrintStream(socket.getOutputStream());
 			salida.println(query);
+			salida.flush();
+			
+			BufferedReader entrada = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+			String cadena = "";
+			
+			while(!cadena.equals("-1")) {
+				cadena = entrada.readLine();
+				if(!cadena.equals("-1"))
+					System.out.println(cadena);
+			}
+			entrada.close();
+			salida.close();
 		}catch(IOException e) {
 			e.printStackTrace();
 		}finally {
