@@ -1,0 +1,10 @@
+module ClienteRemoto{
+	interface ClienteRem
+	{
+		string Saludar(in string nombre);
+		double Suma(in double x,in double y);
+		double Resta(in double x,in double y);
+		double Division(in double x,in double y);
+		double Multiplicacion(in double x,in double y);
+	};
+};
